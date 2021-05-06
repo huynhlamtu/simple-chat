@@ -1,0 +1,19 @@
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.sidebar {
+  background-color: rgba(32, 32, 35, 1);
+  height: 100%;
+  border-right: 1px solid rgba(189, 189, 192, 0.1);
+  transition: width 0.3s;
+  overflow-y: scroll;
+}
+
+/* not small devices  */
+@media (min-width: 576px) {
+  .sidebar {
+    width: 320px;
+  }
+}
