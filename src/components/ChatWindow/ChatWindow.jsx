@@ -1,19 +1,16 @@
 import React from "react";
-import store from "../../store";
 import Header from "./Header/Header";
 import Chats from "./Chats/Chats";
 import "./ChatWindow.css";
+import MessageInput from "./MessageInput/MessageInput";
 
-function ChatWindow() {
-  const state = store.getState();
-  const { activeThreadId, threads } = state;
-  const activeThread = threads.find((t) => t.id === activeThreadId);
-  const { messages: activeMsgs } = activeThread;
+function ChatWindow({ activeThread }) {
+  const { messages: activeMsgs, typing } = activeThread;
   return (
     <div className="ChatWindow">
       <Header activeThread={activeThread} />
       <Chats messages={activeMsgs} />
-      {/* <MessageInput value={typing} /> */}
+      <MessageInput activeThread={activeThread} value={typing} />
     </div>
   );
 }

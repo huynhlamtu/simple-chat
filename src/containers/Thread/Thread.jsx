@@ -1,17 +1,17 @@
 import React from "react";
+import { setActiveThread } from "../../actions";
 import store from "../../store/index";
 import "./Thread.css";
 
 function Thread({ thread }) {
-  const { title, id } = thread;
+  const { title } = thread;
 
-  //   const handleUserClick = ({ user_id }) => {
-  //     store.dispatch(setActiveUserId(user_id));
-  //   };
+  const handleThreadClick = ({ id }) => {
+    store.dispatch(setActiveThread(id));
+  };
 
   return (
-    // <div className="thread" onClick={handlethreadClick.bind(null, thread)}>
-    <div className="thread">
+    <div className="thread" onClick={handleThreadClick.bind(null, thread)}>
       {/* <img src={profile_pic} alt={name} className="thread__pic" /> */}
       <div className="thread__details">
         {/* <p className="thread__details-name">{name}</p> */}

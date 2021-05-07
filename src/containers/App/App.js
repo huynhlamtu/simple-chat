@@ -12,8 +12,10 @@ function App() {
   const activeThread = threads.find((t) => t.id === activeThreadId);
   return (
     <Provider store={store}>
-      <Sidebar threads={threads} />
-      <Main activeThread={activeThread} activeThreadId={activeThreadId} />
+      <div className="App">
+        <Sidebar threads={threads} />
+        <Main activeThread={activeThread} activeThreadId={activeThreadId} />
+      </div>
     </Provider>
   );
 }
