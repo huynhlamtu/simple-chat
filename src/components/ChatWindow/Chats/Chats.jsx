@@ -12,7 +12,7 @@ function Chats({ messages }) {
   };
 
   const onSelectMsg = (id) => {
-    if (setSelectedMsg === id) setSelectedMsg(null);
+    if (selectedMsg === id) setSelectedMsg(null);
     else setSelectedMsg(id);
   };
 
