@@ -14,7 +14,6 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "autosize": "^4.0.2",
-    "babel-loader": "^8.2.2",
     "bootstrap": "^4.6.0",
     "joi-browser": "^13.4.0",
     "react": "^17.0.2",
