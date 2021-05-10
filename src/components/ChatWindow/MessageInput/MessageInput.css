@@ -5,10 +5,26 @@
 .Message__input {
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8);*/
+  background-color: #9b9a9a77;
   color: #fff;
   border: 0;
   border-radius: 10px;
   font-size: 1rem;
   outline: 0;
+}
+
+.messageInput {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.messageInput button {
+  margin-left: 2rem;
+  border: none;
+  outline: none;
+  padding: 7px 10px;
+  color: rgb(0, 0, 0);
 }

@@ -2,6 +2,9 @@ import { createStore } from "redux";
 import reducer from "../reducers/index";
 import { v4 } from "uuid";
 
+const id1 = v4();
+const id2 = v4();
+
 const initialState = {
   activeThreadId: null, // New state property
   threads: [
@@ -10,6 +13,13 @@ const initialState = {
       id: "1-fca2", // hardcoded pseudo-UUID
       title: "Arthur Shelby",
       typing: "",
+      lastMessage: {
+        text: "We'll go to London...",
+        timestamp: Date.now(),
+        id: id1,
+        is_user_message: true,
+        seen: true,
+      },
       messages: [
         {
           text: "Oit Tommay",
@@ -50,7 +60,7 @@ const initialState = {
         {
           text: "We'll go to London...",
           timestamp: Date.now(),
-          id: v4(),
+          id: id1,
           is_user_message: true,
         },
       ],
@@ -59,6 +69,13 @@ const initialState = {
       id: "2-be91",
       title: "Alfie Solomons",
       typing: "",
+      lastMessage: {
+        text: "Oh, did I?",
+        timestamp: Date.now(),
+        id: id2,
+        is_user_message: false,
+        seen: true,
+      },
       messages: [
         {
           text: "Soooo",
@@ -83,7 +100,7 @@ const initialState = {
           // This thread starts with a single message already
           text: "Oh, did I?",
           timestamp: Date.now(),
-          id: v4(),
+          id: id2,
           is_user_message: false,
         },
       ],

@@ -1,11 +1,15 @@
 import {
   ADD_MESSAGE,
   DELETE_MESSAGE,
+  OPEN_THREAD,
   SET_TYPING_VALUE,
 } from "../actions/constants/action-types";
 
 function findThreadIndex(threads = {}, action) {
   switch (action.type) {
+    case OPEN_THREAD: {
+      return threads.findIndex((t) => t.id === action.payload);
+    }
     case ADD_MESSAGE:
     case SET_TYPING_VALUE: {
       return threads.findIndex((t) => t.id === action.payload.activeThreadId);

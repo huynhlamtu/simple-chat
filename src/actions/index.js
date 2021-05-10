@@ -3,6 +3,7 @@ import {
   ADD_MESSAGE,
   SET_TYPING_VALUE,
   DELETE_MESSAGE,
+  ADD_USER,
 } from "./constants/action-types";
 
 export const setActiveThread = (id) => ({
@@ -33,5 +34,12 @@ export const deleteMessage = (id, activeThreadId) => {
       id,
       activeThreadId,
     },
+  };
+};
+
+export const addUser = (username) => {
+  return {
+    type: ADD_USER,
+    payload: username,
   };
 };

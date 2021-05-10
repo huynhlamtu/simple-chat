@@ -2,9 +2,9 @@ import reactJoiValidation from "react-joi-validation";
 import { Provider } from "react-redux";
 import "./App.css";
 import store from "../../store/index";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Main from "../../components/Main/Main";
 import "./App.css";
+import Sidebar from "../../components/Main/Sidebar/Sidebar";
+import Main from "../../components/Main/Main";
 
 function App() {
   const state = store.getState();

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import TextareaAutosize from "react-textarea-autosize";
 import store from "../../../store/index";
 import { sendMessage, setTypingValue } from "../../../actions/index";
+import autosize from "autosize";
 import "./MessageInput.css";
 
 function MessageInput({ activeThread, value }) {
@@ -11,19 +13,39 @@ function MessageInput({ activeThread, value }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { typing } = activeThread;
-    store.dispatch(sendMessage(typing, activeThread.id));
+    if (typing) store.dispatch(sendMessage(typing, activeThread.id));
+  };
+
+  // useEffect(() => {
+  //   this.textarea.focus();
+  //   autosize(this.textarea);
+  // }, []);
+
+  const style = {
+    width: "100%",
+    padding: ".5rem 1rem",
+    background: "#9b9a9a77",
+    color: "white",
+    border: "0",
+    borderRadius: "10px",
+    fontSize: "1rem",
+    outline: "0",
   };
 
   return (
     <form className="Message" onSubmit={handleSubmit}>
-      <input
-        autoFocus={true}
-        type="text"
-        onChange={handleChange}
-        value={value}
-        placeholder="write a message..."
-        className="Message__input"
-      />
+      <div className="messageInput">
+        <TextareaAutosize
+          style={style}
+          value={value}
+          onChange={handleChange}
+          maxRows={5}
+          rows={1}
+          placeholder="type some thing..."
+          autoFocus="on"
+        />
+        <button>Send</button>
+      </div>
     </form>
   );
 }
