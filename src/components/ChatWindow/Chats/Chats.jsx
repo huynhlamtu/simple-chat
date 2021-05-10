@@ -12,7 +12,8 @@ function Chats({ messages }) {
   };
 
   const onSelectMsg = (id) => {
-    setSelectedMsg(id);
+    if (setSelectedMsg === id) setSelectedMsg(null);
+    else setSelectedMsg(id);
   };
 
   useEffect(() => {
