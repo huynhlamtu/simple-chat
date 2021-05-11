@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.css";
 import App from "./containers/App/App";
 import store from "./store/index";
 

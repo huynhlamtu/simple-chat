@@ -7,3 +7,5 @@ export const SEND_MESSAGE = "SEND_MESSAGE";
 export const OPEN_THREAD = "OPEN_THREAD";
 
 export const ADD_USER = "ADD_USER";
+
+export const SEARCH_MESSAGE = "SEARCH_MESSAGE";

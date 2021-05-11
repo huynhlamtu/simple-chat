@@ -4,6 +4,7 @@ import {
   SET_TYPING_VALUE,
   DELETE_MESSAGE,
   ADD_USER,
+  SEARCH_MESSAGE,
 } from "./constants/action-types";
 
 export const setActiveThread = (id) => ({
@@ -41,5 +42,12 @@ export const addUser = (username) => {
   return {
     type: ADD_USER,
     payload: username,
+  };
+};
+
+export const searchMessage = (query) => {
+  return {
+    type: SEARCH_MESSAGE,
+    payload: query,
   };
 };

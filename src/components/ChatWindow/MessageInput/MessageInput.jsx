@@ -16,21 +16,26 @@ function MessageInput({ activeThread, value }) {
     if (typing) store.dispatch(sendMessage(typing, activeThread.id));
   };
 
-  // useEffect(() => {
-  //   this.textarea.focus();
-  //   autosize(this.textarea);
-  // }, []);
-
   const style = {
     width: "100%",
     padding: ".5rem 1rem",
-    background: "#9b9a9a77",
-    color: "white",
-    border: "0",
+    background: "white",
+    color: "black",
+    border: "1px solid #a9bace",
     borderRadius: "10px",
     fontSize: "1rem",
     outline: "0",
   };
+
+  const btnDisableStyle = {
+    backgroundColor: "rgb(7, 65, 255, 0.5)",
+  };
+
+  const btnStyle = {
+    backgroundColor: "rgb(7, 65, 255)",
+  };
+
+  console.log(value);
 
   return (
     <form className="Message" onSubmit={handleSubmit}>
@@ -40,11 +45,13 @@ function MessageInput({ activeThread, value }) {
           value={value}
           onChange={handleChange}
           maxRows={5}
-          rows={1}
+          minRows={2}
           placeholder="type some thing..."
           autoFocus="on"
         />
-        <button>Send</button>
+        <button style={value.length > 0 ? btnStyle : btnDisableStyle}>
+          Send
+        </button>
       </div>
     </form>
   );

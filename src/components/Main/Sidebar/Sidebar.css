@@ -4,10 +4,13 @@
 }
 
 .sidebar {
-  background-color: rgba(32, 32, 35, 1);
+  background-color: #ebeff4;
   height: 100%;
-  border-right: 1px solid rgba(189, 189, 192, 0.1);
   transition: width 0.3s;
+}
+
+.thread-container {
+  height: calc(100% - 50px);
   overflow-y: scroll;
 }
 

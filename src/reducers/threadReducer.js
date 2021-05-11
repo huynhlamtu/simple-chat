@@ -76,6 +76,8 @@ const threadReducer = (state = {}, action) => {
       const newThread = {
         id: v4(),
         title: action.payload,
+        avatar:
+          "https://p.kindpng.com/picc/s/78-785917_user-login-function-name-avatar-user-icon-hd.png",
         typing: "",
         lastMessage: {
           text: greeting(action.payload),
@@ -86,7 +88,6 @@ const threadReducer = (state = {}, action) => {
 
       return [newThread, ...state];
     }
-    // activeThreadReducer(newThread.id);
     default:
       return state;
   }

@@ -1,18 +1,25 @@
 .form-container {
   width: 100%;
-  padding: 1rem;
-  color: red;
+  margin: 0;
+  border-bottom: 1px solid #a9bace;
+  box-sizing: border-box;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-container form {
   display: flex;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .form-container input {
   padding: 4px 10px;
   border: none;
-  width: 85%;
+  width: 75%;
 }
 
 .form-container input:focus {

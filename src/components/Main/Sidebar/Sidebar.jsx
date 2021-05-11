@@ -7,9 +7,11 @@ function Sidebar({ threads }) {
   return (
     <aside className="sidebar">
       <AddUser />
-      {threads.map((thread) => (
-        <Thread thread={thread} key={thread.id} />
-      ))}
+      <div className="thread-container">
+        {threads.map((thread) => (
+          <Thread thread={thread} key={thread.id} />
+        ))}
+      </div>
     </aside>
   );
 }
