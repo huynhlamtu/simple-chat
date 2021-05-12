@@ -5,6 +5,7 @@ import {
   DELETE_MESSAGE,
   ADD_USER,
   SEARCH_MESSAGE,
+  SAVE_MATCH_MESSAGE,
 } from "./constants/action-types";
 
 export const setActiveThread = (id) => ({
@@ -49,5 +50,15 @@ export const searchMessage = (query) => {
   return {
     type: SEARCH_MESSAGE,
     payload: query,
+  };
+};
+
+export const saveMatchMessage = (messageId, threadId) => {
+  return {
+    type: SAVE_MATCH_MESSAGE,
+    payload: {
+      messageId,
+      threadId,
+    },
   };
 };

@@ -40,7 +40,6 @@ const threadReducer = (state = {}, action) => {
     }
 
     case OPEN_THREAD: {
-      console.log(action);
       const threadIndex = findThreadIndex(state, action);
       const oldThread = state[threadIndex];
       const newThread = {

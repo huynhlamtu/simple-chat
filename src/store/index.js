@@ -7,6 +7,7 @@ const id2 = v4();
 
 const initialState = {
   activeThreadId: null, // New state property
+  matchMessageId: null,
   user: {
     name: "Thomas Shelby",
     username: "tommy@gmail.com",

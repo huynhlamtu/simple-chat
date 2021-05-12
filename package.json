@@ -1,9 +1,6 @@
 {
   "name": "table-rows",
   "version": "0.1.0",
-  "engines": {
-    "node": "14.x"
-  },
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -18,7 +15,6 @@
     "joi-browser": "^13.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
     "react-joi-validation": "^1.7.0",
     "react-redux": "^7.2.4",
     "react-scripts": "4.0.3",

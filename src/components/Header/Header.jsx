@@ -1,33 +1,16 @@
-import React, { forwardRef, useState } from "react";
+import React from "react";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import {
   faBell,
   faCheckSquare,
   faFolder,
 } from "@fortawesome/free-regular-svg-icons";
-import { faSearch, faUserPlus } from "@fortawesome/free-solid-svg-icons";
-import { searchMessage } from "../../utils/searchMessage";
+import Search from "../../containers/Search/Search";
 
-function Header(user, threads) {
-  const { avatar, name } = user.user;
-
-  console.log(threads);
-
-  const [query, setQuery] = useState("");
-
-  const onInputChange = (e) => {
-    setQuery(e.currentTarget.value);
-  };
-
-  const handleClearQuery = () => {
-    setQuery("");
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    searchMessage(threads, query);
-  };
+function Header({ user }) {
+  const { name, avatar } = user;
 
   return (
     <div className="container">
@@ -38,24 +21,7 @@ function Header(user, threads) {
             alt=""
           />
         </div>
-        <div className="search">
-          <form onSubmit={handleSubmit}>
-            <div className="search-input">
-              <FontAwesomeIcon icon={faSearch} />
-              <input
-                type="text"
-                placeholder="Type to search to message..."
-                onChange={onInputChange}
-                value={query}
-              />
-              {query.length > 0 && (
-                <span className="clearBtn" onClick={handleClearQuery}>
-                  x
-                </span>
-              )}
-            </div>
-          </form>
-        </div>
+        <Search />
       </div>
       <div className="menu">
         <ul className="menu-icons">

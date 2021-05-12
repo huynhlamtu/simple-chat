@@ -35,8 +35,6 @@ function MessageInput({ activeThread, value }) {
     backgroundColor: "rgb(7, 65, 255)",
   };
 
-  console.log(value);
-
   return (
     <form className="Message" onSubmit={handleSubmit}>
       <div className="messageInput">

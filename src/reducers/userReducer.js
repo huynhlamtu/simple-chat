@@ -1,8 +1,8 @@
-const UserReducer = (state = {}, action) => {
+const userReducer = (state = {}, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default UserReducer;
+export default userReducer;
