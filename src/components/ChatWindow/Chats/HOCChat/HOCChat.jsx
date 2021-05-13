@@ -3,8 +3,13 @@ import "./HOCChat.css";
 import Chat from "./Chat/Chat";
 import Tooltip from "./Tooltip/Tooltip";
 import ChatInput from "./ChatInput/ChatInput";
+import store from "../../../../store";
 
-function HOCChat({ message, onSelectMsg, selectedMsgId }) {
+function HOCChat({ message, onSelectMsg, selectedMsgId, avatar }) {
+  const { user } = store.getState();
+
+  const { avatar: userAvatar } = user;
+
   const [onEdit, setOnEdit] = useState(false);
 
   const selectedChatRef = useRef(null);
@@ -32,15 +37,15 @@ function HOCChat({ message, onSelectMsg, selectedMsgId }) {
     setOnEdit(bool);
   };
 
-  const { id, is_user_message, text } = message;
-
-  const onSubmit = (newText) => {};
+  const { id, is_user_message } = message;
 
   if (id === selectedMsgId && !onEdit)
     return (
       <div
         ref={selectedChatRef}
-        className={`Chat-content ${is_user_message ? "is-user-msg" : ""}`}
+        className={`Chat-content ${
+          is_user_message ? "is-user-msg" : "is-friend-msg"
+        }`}
       >
         <Tooltip
           onSetOnEdit={onSetOnEdit}
@@ -49,6 +54,7 @@ function HOCChat({ message, onSelectMsg, selectedMsgId }) {
           onEdit={onEdit}
         />
         <Chat message={message} />
+        <img src={is_user_message ? userAvatar : avatar} />
       </div>
     );
 
@@ -56,20 +62,26 @@ function HOCChat({ message, onSelectMsg, selectedMsgId }) {
     return (
       <div
         ref={selectedChatRef}
-        className={`Chat-content ${is_user_message ? "is-user-msg" : ""}`}
+        className={`Chat-content ${
+          is_user_message ? "is-user-msg" : "is-friend-msg"
+        }`}
       >
         <ChatInput
-          onSubmit={onSubmit}
           onSetOnEdit={onSetOnEdit}
           message={message}
           onSelectMsg={onSelectMsg}
         />
+        <img src={is_user_message ? userAvatar : avatar} />
       </div>
     );
   }
 
   return (
-    <div className={`Chat-content ${is_user_message ? "is-user-msg" : ""}`}>
+    <div
+      className={`Chat-content ${
+        is_user_message ? "is-user-msg" : "is-friend-msg"
+      }`}
+    >
       {is_user_message && (
         <div className="openTooltipBtn" onClick={() => onSelectMsg(id)}>
           <span>.</span>
@@ -78,6 +90,7 @@ function HOCChat({ message, onSelectMsg, selectedMsgId }) {
         </div>
       )}
       <Chat message={message} />
+      <img src={is_user_message ? userAvatar : avatar} />
     </div>
   );
 }

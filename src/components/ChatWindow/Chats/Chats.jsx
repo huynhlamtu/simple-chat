@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Chats.css";
 import HOCChat from "./HOCChat/HOCChat";
 
-function Chats({ messages }) {
+function Chats({ messages, avatar }) {
   const [selectedMsgId, setSelectedMsg] = useState(null);
 
   const chatsRef = React.createRef();
@@ -30,6 +30,7 @@ function Chats({ messages }) {
     <div className="Chats" ref={chatsRef}>
       {messages.map((message) => (
         <HOCChat
+          avatar={avatar}
           message={message}
           onSelectMsg={onSelectMsg}
           selectedMsgId={selectedMsgId}

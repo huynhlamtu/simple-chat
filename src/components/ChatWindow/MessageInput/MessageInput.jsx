@@ -22,7 +22,7 @@ function MessageInput({ activeThread, value }) {
     color: "black",
     border: "1px solid #a9bace",
     borderRadius: "10px",
-    fontSize: "0.5rem",
+    fontSize: "1rem",
     outline: "0",
   };
 

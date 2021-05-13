@@ -15,13 +15,14 @@ function Chat({ message }) {
 
   if (id === matchMessageId)
     return (
-      <pre
-        id={id}
-        ref={chatRef}
+      <div
         className={`Chat ${is_user_message ? "is-user-msg" : "is-friend-msg"}`}
       >
-        {text}
-      </pre>
+        <img src="" alt="" />
+        <pre id={id} ref={chatRef}>
+          {text}
+        </pre>
+      </div>
     );
 
   return (
