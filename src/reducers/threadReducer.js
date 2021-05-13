@@ -4,6 +4,7 @@ import {
   DELETE_MESSAGE,
   OPEN_THREAD,
   SET_TYPING_VALUE,
+  UPDATE_MESSAGE,
 } from "../actions/constants/action-types";
 import messagesReducer from "./messageReducer";
 import findThreadIndex from "./findThreadIndex";
@@ -31,6 +32,21 @@ const threadReducer = (state = {}, action) => {
         messages,
         typing: "",
         lastMessage,
+      };
+      return [
+        ...state.slice(0, threadIndex),
+        newThread,
+        ...state.slice(threadIndex + 1, state.length),
+      ];
+    }
+
+    case UPDATE_MESSAGE: {
+      const threadIndex = findThreadIndex(state, action);
+      const oldThread = state[threadIndex];
+      const messages = messagesReducer(oldThread.messages, action);
+      const newThread = {
+        ...oldThread,
+        messages,
       };
       return [
         ...state.slice(0, threadIndex),

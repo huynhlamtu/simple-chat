@@ -13,3 +13,5 @@ export const ADD_USER = "ADD_USER";
 export const SEARCH_MESSAGE = "SEARCH_MESSAGE";
 
 export const SAVE_MATCH_MESSAGE = "SAVE_MATCH_MESSAGE";
+
+export const UPDATE_MESSAGE = "UPDATE_MESSAGE";

@@ -1,0 +1,38 @@
+.tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1.5rem;
+  /* position: relative;
+  right: -150px;
+  transform: translateX(-150px);
+  transition: transform 5000mx ease-in-out; */
+}
+
+.tooltip-item {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip-item:hover {
+  transform: scale(1.2);
+}
+
+.delete {
+  background-color: rgb(209, 32, 32);
+}
+
+.edit {
+  background-color: rgb(211, 211, 27);
+}
+
+.cancel {
+  background-color: rgb(224, 144, 69);
+}

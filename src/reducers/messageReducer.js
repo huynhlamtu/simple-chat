@@ -1,4 +1,8 @@
-import { ADD_MESSAGE, DELETE_MESSAGE } from "../actions/constants/action-types";
+import {
+  ADD_MESSAGE,
+  DELETE_MESSAGE,
+  UPDATE_MESSAGE,
+} from "../actions/constants/action-types";
 import { v4 } from "uuid";
 
 const messagesReducer = (state = {}, action) => {
@@ -14,6 +18,22 @@ const messagesReducer = (state = {}, action) => {
     }
     case DELETE_MESSAGE: {
       return state.filter((m) => m.id !== action.payload.id);
+    }
+
+    case UPDATE_MESSAGE: {
+      const messageIndex = state.findIndex(
+        (m) => m.id === action.payload.messageId
+      );
+      const oldMessage = state[messageIndex];
+      const updatedMessage = {
+        ...oldMessage,
+        text: action.payload.newText,
+      };
+      return [
+        ...state.slice(0, messageIndex),
+        updatedMessage,
+        ...state.slice(messageIndex + 1, state.length),
+      ];
     }
     default: {
       return state;

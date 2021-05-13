@@ -15,7 +15,9 @@ function SearchResult({ matchMessages, onClickMatchItem, query, inputFocus }) {
               <img src={m.avatar} alt={m.title} />
               <div className="match-content">
                 <h4>{m.title}</h4>
-                <p>{m.message.text}</p>
+                <p>{`${m.message.is_user_message ? "You: " : ""}${
+                  m.message.text
+                }`}</p>
               </div>
             </div>
           ))}

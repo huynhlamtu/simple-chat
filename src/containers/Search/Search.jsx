@@ -15,8 +15,10 @@ function Search() {
   const [matchMessages, setMatchMessages] = useState([]);
 
   const onInputChange = (e) => {
-    setQuery(e.currentTarget.value);
-    const matchResult = searchMessage(threads, query);
+    const _query = e.currentTarget.value;
+    setQuery(_query);
+    const validatedQuery = _query.replace(/[^a-z0-9]/gi, " ");
+    const matchResult = searchMessage(threads, validatedQuery);
     setMatchMessages(matchResult);
   };
 
@@ -27,13 +29,12 @@ function Search() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const matchResult = searchMessage(threads, query);
-    setMatchMessages(matchResult);
   };
 
   const onClickMatchItem = (m) => {
     store.dispatch(saveMatchMessage(m.message.id, m.threadId));
   };
+
   return (
     <div className="search">
       <form onSubmit={handleSubmit}>
@@ -67,5 +68,4 @@ function Search() {
     </div>
   );
 }
-
 export default Search;

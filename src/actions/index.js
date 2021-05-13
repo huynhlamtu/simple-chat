@@ -6,6 +6,7 @@ import {
   ADD_USER,
   SEARCH_MESSAGE,
   SAVE_MATCH_MESSAGE,
+  UPDATE_MESSAGE,
 } from "./constants/action-types";
 
 export const setActiveThread = (id) => ({
@@ -59,6 +60,17 @@ export const saveMatchMessage = (messageId, threadId) => {
     payload: {
       messageId,
       threadId,
+    },
+  };
+};
+
+export const updateMessage = (messageId, newText, activeThreadId) => {
+  return {
+    type: UPDATE_MESSAGE,
+    payload: {
+      messageId,
+      newText,
+      activeThreadId,
     },
   };
 };

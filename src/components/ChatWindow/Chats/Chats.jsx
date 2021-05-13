@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Chat from "./Chat/Chat";
 import "./Chats.css";
+import HOCChat from "./HOCChat/HOCChat";
 
 function Chats({ messages }) {
-  const [selectedMsg, setSelectedMsg] = useState(null);
+  const [selectedMsgId, setSelectedMsg] = useState(null);
 
   const chatsRef = React.createRef();
 
@@ -12,7 +12,7 @@ function Chats({ messages }) {
   };
 
   const onSelectMsg = (id) => {
-    if (selectedMsg === id) setSelectedMsg(null);
+    if (selectedMsgId === id) setSelectedMsg(null);
     else setSelectedMsg(id);
   };
 
@@ -29,11 +29,10 @@ function Chats({ messages }) {
   return (
     <div className="Chats" ref={chatsRef}>
       {messages.map((message) => (
-        <Chat
+        <HOCChat
           message={message}
-          key={message.id}
           onSelectMsg={onSelectMsg}
-          selectedMsg={selectedMsg}
+          selectedMsgId={selectedMsgId}
         />
       ))}
     </div>
