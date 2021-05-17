@@ -13,6 +13,11 @@
   cursor: pointer;
 }
 
+.Chat > p {
+  margin: 0;
+  padding: 0;
+}
+
 .Chat.is-user-msg {
   margin-left: auto;
   background: #2b2c33;
