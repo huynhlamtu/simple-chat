@@ -18,18 +18,16 @@ function AddUser() {
 
   return (
     <div className="form-container">
-      <form onSubmit={onAddUsername}>
-        <div>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={onUsernameChange}
-            autoComplete="off"
-            placeholder="Add new user to chat..."
-          />
-          <button>+</button>
-        </div>
+      <form onSubmit={onAddUsername} className="form">
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={onUsernameChange}
+          autoComplete="off"
+          placeholder="Add new user to chat..."
+        />
+        <button>+</button>
       </form>
     </div>
   );

@@ -3,6 +3,7 @@ import {
   DELETE_MESSAGE,
   OPEN_THREAD,
   SET_TYPING_VALUE,
+  UPDATE_MESSAGE,
 } from "../actions/constants/action-types";
 
 function findThreadIndex(threads = {}, action) {
@@ -11,6 +12,7 @@ function findThreadIndex(threads = {}, action) {
       return threads.findIndex((t) => t.id === action.payload);
     }
     case ADD_MESSAGE:
+    case UPDATE_MESSAGE:
     case SET_TYPING_VALUE: {
       return threads.findIndex((t) => t.id === action.payload.activeThreadId);
     }

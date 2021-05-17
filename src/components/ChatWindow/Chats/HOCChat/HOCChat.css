@@ -1,0 +1,51 @@
+.Chat-content {
+  display: flex;
+  align-items: center;
+  max-width: 65%;
+}
+
+.Chat-content img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.Chat-content:hover .openTooltipBtn {
+  visibility: visible;
+}
+
+.is-user-msg {
+  margin-left: auto !important;
+}
+
+.is-user-msg img {
+  margin-left: 1rem;
+}
+
+.is-friend-msg {
+  flex-direction: row-reverse;
+}
+
+.is-friend-msg img {
+  margin-right: 1rem;
+}
+
+.Chat-content .is-user-msg {
+  background: #2b2c33;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.openTooltipBtn {
+  visibility: hidden;
+  margin: 0.5rem;
+  cursor: pointer;
+  padding-bottom: 0.75rem;
+}
+
+.openTooltipBtn > span {
+  color: black;
+  font-size: 1.5rem;
+}

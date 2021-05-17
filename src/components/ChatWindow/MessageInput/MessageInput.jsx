@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import store from "../../../store/index";
 import { sendMessage, setTypingValue } from "../../../actions/index";
-import autosize from "autosize";
 import "./MessageInput.css";
 
 function MessageInput({ activeThread, value }) {

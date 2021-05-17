@@ -1,12 +1,14 @@
 import { combineReducers } from "redux";
 import threadReducer from "./threadReducer";
 import activeThreadReducer from "./activeThreadReducer";
-import UserReducer from "./userReducer";
+import userReducer from "./userReducer";
+import matchMessageReducer from "./matchMessageReducer";
 
 const reducer = combineReducers({
-  threads: threadReducer,
+  matchMessageId: matchMessageReducer,
   activeThreadId: activeThreadReducer,
-  user: UserReducer,
+  user: userReducer,
+  threads: threadReducer,
 });
 
 export default reducer;
